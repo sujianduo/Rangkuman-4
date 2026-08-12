@@ -1,203 +1,439 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rangkuman</title>
+    <style>
+        :root {
+            --primary: #4A90E2;
+            --primary-light: #EBF3FA;
+            --accent-pink: #FF6B81;
+            --accent-pink-light: #FFE8EC;
+            --accent-yellow: #FFA500;
+            --accent-yellow-light: #FFF8E7;
+            --accent-green: #2ECC71;
+            --text-main: #2C3E50;
+            --text-sub: #5A6B7C;
+            --bg-main: #F4F7FB;
+            --card-bg: #FFFFFF;
+            --shadow: 0 8px 24px rgba(149, 157, 165, 0.15);
+            --radius: 16px;
+        }
 
-<title>Rangkuman</title>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-<style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 20px;
+        }
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
 
-body{
-    font-family:
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    sans-serif;
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #4A90E2, #6C5CE7);
+            color: white;
+            border-radius: var(--radius);
+            margin-bottom: 30px;
+            box-shadow: var(--shadow);
+        }
 
-    background:#0a0a0f;
+        header h1 {
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
 
-    background-image:
-    radial-gradient(circle at 20% 50%, rgba(120,0,255,.15), transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(0,255,200,.1), transparent 50%),
-    radial-gradient(circle at 40% 80%, rgba(255,0,150,.1), transparent 50%);
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
 
-    min-height:100vh;
+        .section-card {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow);
+        }
 
-    display:flex;
-    justify-content:center;
-    align-items:center;
+        .section-title {
+            display: flex;
+            align-items: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 24px;
+            padding-bottom: 12px;
+            border-bottom: 3px solid var(--primary-light);
+            color: var(--primary);
+        }
 
-    padding:20px;
-}
+        .section-title .badge {
+            background-color: var(--primary);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-right: 12px;
+        }
 
-.container-card{
-    width:100%;
-    max-width:700px;
+        /* Vocab Grid */
+        .vocab-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+        }
 
-    background:rgba(20,20,30,.6);
+        .vocab-item {
+			display: flex;
+			align-items: center;
+			gap: 16px;
+		}
 
-    backdrop-filter:blur(12px);
+		.vocab-num {
+            background: var(--primary);
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
 
-    border:1px solid rgba(255,255,255,.1);
+		.vocab-hanzi {
+			flex: 0.8;
+			text-align: center;
+			font-size: 1.2rem;
+			font-weight: 500;
+			color: var(--text-main);
+		}
 
-    border-radius:30px;
+		.vocab-pinyin {
+			flex: 0.8;
+			text-align: center;
+			font-size: 1.1rem;
+			color: var(--primary);
+			font-weight: 400;
+		}
 
-    padding:40px;
+		.vocab-meaning {
+			flex: 1.2;
+			text-align: center;
+			font-size: 1.1rem;
+			color: var(--text-sub);
+			font-weight: 400;
+		}
 
-    transition:0.4s;
-}
+        @media (max-width: 600px) {
+            .vocab-item {
+                flex-wrap: wrap;
+                gap: 8px;
+            }
 
-.container-card:hover{
-    transform:translateY(-6px);
+            .vocab-meaning {
+                width: 100%;
+                padding-left: 36px;
+            }
+        }
 
-    box-shadow:
-    0 0 40px rgba(0,255,200,.2);
-}
+        /* Sentences Layout */
+        .sentences-group {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
 
-.title{
-    text-align:center;
-    font-size:40px;
-    font-weight:900;
-    margin-bottom:30px;
+        .sentence-card {
+            background: #F9FAFB;
+            border: 1px solid #E5E7EB;
+            border-radius: 12px;
+            padding: 16px;
+        }
 
-    background:linear-gradient(
-    90deg,
-    #c084fc,
-    #22d3ee,
-    #ec4899
-    );
+        .sentence-card h4 {
+            color: var(--text-sub);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+        }
 
-    -webkit-background-clip:text;
-    background-clip:text;
+        .sentence-list {
+            list-style: none;
+        }
 
-    color:transparent;
-}
+        .sentence-list li {
+            font-size: 1.1rem;
+            padding: 10px 0;
+            border-bottom: 3px dashed #CBD5E1;
+            line-height: 1.8;
+        }
 
-.content{
-    color:#b8b8b8;
-    text-align:left;
-    line-height:1.8;
-    font-size:16px;
-}
+        .sentence-list li:last-child {
+            border-bottom: none;
+        }
 
-.content p{
-    margin-bottom:20px;
-}
+        /* Stroke Grid */
+        .stroke-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 16px;
+        }
 
-.kalimat{
-    white-space:pre-line;
-}
+        .stroke-item {
+            border: 1px solid #E5E7EB;
+            border-radius: 12px;
+            padding: 16px;
+            text-align: center;
+            background-color: #FAFAFA;
+        }
 
-.button-box{
-    text-align:center;
-    margin-top:30px;
-}
+        .stroke-char {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
 
-.btn{
-    display:inline-block;
-    text-decoration:none;
+        .stroke-pinyin {
+            font-size: 1.3rem;
+            color: var(--text-sub);
+        }
 
-    padding:14px 28px;
+        .stroke-highlight {
+            color: #E74C3C;
+            font-weight: bold;
+        }
+		
+		.button-box{
+			text-align:center;
+			margin-top:30px;
+		}
 
-    border-radius:50px;
+		.btn{
+			display:inline-block;
+			text-decoration:none;
+			padding: 22px 48px;
+			border-radius: 50px;
+			background: linear-gradient(90deg, #c084fc, #22d3ee);
+			color: white;
+			font-weight: 700;
+			font-size: 1.2rem;
+			transition: .3s;
+			box-shadow: 0 4px 15px rgba(192, 132, 252, 0.3);
+		}
 
-    background:linear-gradient(
-    90deg,
-    #c084fc,
-    #22d3ee
-    );
+		.btn:hover{
+			transform: scale(1.05);
+			box-shadow: 0 0 25px rgba(34, 211, 238, .5);
+		}
 
-    color:white;
-    font-weight:700;
+		@media (max-width: 600px) {
+			.button-box {
+				width: 100%;
+				margin-top: 25px;
+				padding: 0 10px;
+			}
 
-    transition:.3s;
-}
+			.btn {
+				display: block;
+				width: 100%;
+				max-width: 500px;
+				margin: 0 auto;
+				padding: 20px 24px;
+				font-size: 1.2rem;
+				text-align: center;
+				border-radius: 50px;
+			}
+		}
 
-.btn:hover{
-    transform:scale(1.05);
+		.footer {
+            text-align: center;
+            margin-top: 25px;
+            font-size: 1.1rem;
+            color: #54809b;
+            opacity: 0.8;
+        }
 
-    box-shadow:
-    0 0 25px rgba(34,211,238,.5);
-}
-
-@media(max-width:600px){
-
-.title{
-    font-size:30px;
-}
-
-.container-card{
-    padding:25px;
-}
-
-}
-
-</style>
+    </style>
 </head>
-
 <body>
 
-<div class="container-card">
+<div class="container">
 
-<h4 class="title">
-Rangkuman Bahasa Mandarin<br>
-第一课内容概要
-</h4>
+    <!-- Header -->
+    <header>
+        <h1>第二课 | 我有两本书</h1>
+        <p>Bab. 2 | Saya mempunyai 2 buah buku</p>
+    </header>
 
-<div class="content">
+    <!-- Section 1: Vocabulary -->
+    <div class="section-card">
+        <div class="section-title">
+            <span class="badge">1</span> 记生词 (Menghafal Kosakata)
+        </div>
+        <div class="vocab-grid">
+            <div class="vocab-item">
+                <span class="vocab-num">1</span>
+				<span class="vocab-hanzi">本</span>
+                <span class="vocab-pinyin">běn</span>
+                <span class="vocab-meaning">KBB Buku</span>
+            </div>
+            <div class="vocab-item">
+                <span class="vocab-num">2</span>
+				<span class="vocab-hanzi">支</span>
+                <span class="vocab-pinyin">zhī</span>
+                <span class="vocab-meaning">KBB Pensil</span>
+            </div>
+            <div class="vocab-item">
+                <span class="vocab-num">3</span>
+                <span class="vocab-hanzi">个</span>
+                <span class="vocab-pinyin">gè</span>
+                <span class="vocab-meaning">KBB orang</span>
+            </div>
+            <div class="vocab-item">
+                <span class="vocab-num">4</span>
+                <span class="vocab-hanzi">两</span>
+                <span class="vocab-pinyin">liǎng</span>
+                <span class="vocab-meaning">dua</span>
+            </div>
+            <div class="vocab-item">
+                <span class="vocab-num">5</span>
+                <span class="vocab-hanzi">阿姨</span>
+                <span class="vocab-pinyin">āyí</span>
+                <span class="vocab-meaning">bibi/tante</span>
+            </div>
+            <div class="vocab-item">
+                <span class="vocab-num">6</span>
+                <span class="vocab-hanzi">儿子</span>
+                <span class="vocab-pinyin">érzi</span>
+                <span class="vocab-meaning">anak laki-laki</span>
+            </div>
+            <div class="vocab-item">
+                <span class="vocab-num">7</span>
+                <span class="vocab-hanzi">叔叔</span>
+                <span class="vocab-pinyin">shū shu</span>
+                <span class="vocab-meaning">paman</span>
+            </div>
+            <div class="vocab-item">
+                <span class="vocab-num">8</span>
+                <span class="vocab-hanzi">女儿</span>
+                <span class="vocab-pinyin">nǚ'ér</span>
+                <span class="vocab-meaning">anak perempuan</span>
+            </div>
+            <div class="vocab-item">
+                <span class="vocab-num">9</span>
+                <span class="vocab-hanzi">小明</span>
+                <span class="vocab-pinyin">xiǎo mínɡ</span>
+                <span class="vocab-meaning">Xiaoming</span>
+            </div>
+			<div class="vocab-item">
+                <span class="vocab-num">10</span>
+                <span class="vocab-hanzi">方方</span>
+                <span class="vocab-pinyin">fānɡ fānɡ</span>
+                <span class="vocab-meaning">Fangfang</span>
+            </div>
+			<div class="vocab-item">
+                <span class="vocab-num">11</span>
+                <span class="vocab-hanzi">橡皮</span>
+                <span class="vocab-pinyin">xiànɡ pí</span>
+                <span class="vocab-meaning">penghapus</span>
+            </div>
+			<div class="vocab-item">
+                <span class="vocab-num">12</span>
+                <span class="vocab-hanzi">块</span>
+                <span class="vocab-pinyin">kuài</span>
+                <span class="vocab-meaning">buah/potong (satuan)</span>
+            </div>
+			<div class="vocab-item">
+                <span class="vocab-num">13</span>
+                <span class="vocab-hanzi">可以</span>
+                <span class="vocab-pinyin">kě yǐ</span>
+                <span class="vocab-meaning">boleh/dapat</span>
+            </div>
+			<div class="vocab-item">
+                <span class="vocab-num">14</span>
+                <span class="vocab-hanzi">用</span>
+                <span class="vocab-pinyin">yònɡ</span>
+                <span class="vocab-meaning">menggunakan</span>
+            </div>
+        </div>
+    </div>
 
-<p>
-1. 书 : shū : buku<br>
-2. 笔 : bǐ : alat untuk menulis<br>
-3. 同桌 : tónɡ zhuō : teman semeja<br>
-4. 书包 : shū bāo : tas sekolah<br>
-5. 玩具 : wán jù : mainan<br>
-6. 本子 : běn zi : buku tulis<br> 
-7. 尺子 : chǐ zi : penggaris<br> 
-8. 这 : zhè : ini<br>
-9. 那 : nà : itu<br>
-10. 谁 : shéi : siapa
-</p>
+    <!-- Section 2: Key Sentences -->
+    <div class="section-card">
+        <div class="section-title">
+            <span class="badge">2</span> 学句子 (Belajar Kalimat)
+        </div>
+        <div class="sentences-group">
+            <div class="sentence-card">
+                <h4></h4>
+                <ul class="sentence-list">
+                    <li>wǒ yǒu sān ɡè mèi mei<br>我 有 三 个 妹 妹 。<br>Saya mempunyai 3 orang adik perempuan.</li>
+                    <li>李阿姨有一个儿子。</li>
+                    <li>陈叔叔有一个女儿。</li>
+                    <li>小强有两支笔。</li>
+                    <li>小华有两本书。</li>
+                    <li>小明有两个本子。</li>
+                </ul>
+            </div>
+        </div>
+    </div>
 
-<div class="kalimat">
-
-zhè shì xiǎo qiánɡ de bǐ
-1. 这 是 小 强 的 笔 。
-Ini adalah pensil Xiaoqiang.
-
-nà shì shéi de shū bāo
-2. 那 是 谁 的 书 包 ？
-Itu tas sekolah siapa?
-
-zhè shì mèi mei de wán jù
-3. 这 是 妹 妹 的 玩 具 。
-Ini adalah mainan adik perempuan.
-
-zhè shì wǒ de shū
-4. 这 是 我 的 书 。
-Ini adalah buku saya.
-
-nà shì shéi de běn zi
-5. 那 是 谁 的 本 子 ？
-Itu buku tulis siapa?
-
-</div>
-
-<div class="button-box">
-<a href="https://sujianduo.github.io/Kelas-4/" class="btn" target="_blank">
-Mulai mengerjakan soal latihan
-</a>
-</div>
-
-</div>
+    <!-- Section 3: Writing / Chinese Characters -->
+    <div class="section-card">
+        <div class="section-title">
+            <span class="badge">3</span> 写汉字 (Menulis Huruf Mandarin)
+        </div>
+        <p style="margin-bottom: 16px; color: var(--text-sub);"></p>
+        <div class="stroke-grid">
+            <div class="stroke-item">
+                <div class="stroke-pinyin"><span class="stroke-highlight">liǎnɡ</span></div>
+				<div class="stroke-char">两</div>
+            </div>
+            <div class="stroke-item">
+                <div class="stroke-pinyin"><span class="stroke-highlight">ér</span></div>
+				<div class="stroke-char">儿</div>
+            </div>
+            <div class="stroke-item">
+                <div class="stroke-pinyin"><span class="stroke-highlight">nǚ</span></div>
+				<div class="stroke-char">女</div>
+            </div>
+            <div class="stroke-item">
+                <div class="stroke-pinyin"><span class="stroke-highlight">shū</span></div>
+				<div class="stroke-char">叔</div>
+            </div>
+            <div class="stroke-item">
+                <div class="stroke-pinyin"><span class="stroke-highlight">ā</span></div>
+				<div class="stroke-char">阿</div>
+            </div>
+			<div class="stroke-item">
+                <div class="stroke-pinyin"><span class="stroke-highlight">yí</span></div>
+				<div class="stroke-char">姨</div>
+            </div>
+        </div>
+    </div>
+	
+	<div class="button-box">
+		<a href="https://sujianduo.github.io/Kelas-2/" class="btn" target="_blank">
+		Mulai mengerjakan soal latihan
+		</a>
+	</div>
+	<div class="footer">⭐ SD WIDYA DHARMA BANJARMASIN ⭐</div>
 
 </div>
 
