@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rangkuman</title>
+    <title>Rangkuman SAS Bahasa Mandarin Kelas 4 Semester 1</title>
     <style>
         :root {
             --primary: #4A90E2;
@@ -97,13 +97,18 @@
         }
 
         .vocab-item {
-			display: flex;
-			align-items: center;			
-			gap: 16px;
-			border-bottom: 1px dashed #CBD5E1;
-		}
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 8px 0;
+            border-bottom: 1px dashed #CBD5E1;
+        }
 
-		.vocab-num {
+        .vocab-item:last-child {
+            border-bottom: none;
+        }
+
+        .vocab-num {
             background: var(--primary);
             color: white;
             width: 28px;
@@ -114,31 +119,32 @@
             justify-content: center;
             font-size: 0.85rem;
             font-weight: bold;
+            flex-shrink: 0;
         }
 
-		.vocab-hanzi {
-			flex: 0.8;
-			text-align: center;
-			font-size: 1.2rem;
-			font-weight: 500;
-			color: var(--text-main);
-		}
+        .vocab-hanzi {
+            flex: 0.8;
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: var(--text-main);
+        }
 
-		.vocab-pinyin {
-			flex: 1;
-			text-align: center;
-			font-size: 1.1rem;
-			color: var(--primary);
-			font-weight: 400;
-		}
+        .vocab-pinyin {
+            flex: 1;
+            text-align: center;
+            font-size: 1.1rem;
+            color: var(--primary);
+            font-weight: 400;
+        }
 
-		.vocab-meaning {
-			flex: 1.2;
-			text-align: center;
-			font-size: 1.1rem;
-			color: var(--text-sub);
-			font-weight: 400;
-		}
+        .vocab-meaning {
+            flex: 1.2;
+            text-align: center;
+            font-size: 1.1rem;
+            color: var(--text-sub);
+            font-weight: 400;
+        }
 
         @media (max-width: 600px) {
             .vocab-item {
@@ -219,57 +225,56 @@
             color: #E74C3C;
             font-weight: bold;
         }
-		
-		.button-box{
-			text-align:center;
-			margin-top:30px;
-		}
 
-		.btn{
-			display:inline-block;
-			text-decoration:none;
-			padding: 22px 48px;
-			border-radius: 50px;
-			background: linear-gradient(90deg, #c084fc, #22d3ee);
-			color: white;
-			font-weight: 700;
-			font-size: 1.2rem;
-			transition: .3s;
-			box-shadow: 0 4px 15px rgba(192, 132, 252, 0.3);
-		}
+        .button-box {
+            text-align: center;
+            margin-top: 30px;
+        }
 
-		.btn:hover{
-			transform: scale(1.05);
-			box-shadow: 0 0 25px rgba(34, 211, 238, .5);
-		}
+        .btn {
+            display: inline-block;
+            text-decoration: none;
+            padding: 22px 48px;
+            border-radius: 50px;
+            background: linear-gradient(90deg, #c084fc, #22d3ee);
+            color: white;
+            font-weight: 700;
+            font-size: 1.2rem;
+            transition: .3s;
+            box-shadow: 0 4px 15px rgba(192, 132, 252, 0.3);
+        }
 
-		@media (max-width: 600px) {
-			.button-box {
-				width: 100%;
-				margin-top: 25px;
-				padding: 0 10px;
-			}
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 25px rgba(34, 211, 238, .5);
+        }
 
-			.btn {
-				display: block;
-				width: 100%;
-				max-width: 500px;
-				margin: 0 auto;
-				padding: 20px 24px;
-				font-size: 1.2rem;
-				text-align: center;
-				border-radius: 50px;
-			}
-		}
+        @media (max-width: 600px) {
+            .button-box {
+                width: 100%;
+                margin-top: 25px;
+                padding: 0 10px;
+            }
 
-		.footer {
+            .btn {
+                display: block;
+                width: 100%;
+                max-width: 500px;
+                margin: 0 auto;
+                padding: 20px 24px;
+                font-size: 1.2rem;
+                text-align: center;
+                border-radius: 50px;
+            }
+        }
+
+        .footer {
             text-align: center;
             margin-top: 25px;
             font-size: 1.1rem;
             color: #54809b;
             opacity: 0.8;
         }
-
     </style>
 </head>
 <body>
@@ -278,8 +283,8 @@
 
     <!-- Header -->
     <header>
-        <h1>第五课内容概要 | 我的房间</h1>
-        <p>Rangkuman Bab. 5 | Kamar saya</p>
+        <h1>四年级第一学期期末考试复习概要 | 华语</h1>
+        <p>Rangkuman SAS Bahasa Mandarin | Kelas 4 Semester 1</p>
     </header>
 
     <!-- Section 1: Vocabulary -->
@@ -289,64 +294,154 @@
         </div>
         <div class="vocab-grid">
             <div class="vocab-item">
-                <span class="vocab-num">1</span> 
-				<span class="vocab-hanzi">房间</span>
+                <span class="vocab-num">1</span>
+                <span class="vocab-hanzi">书</span>
+                <span class="vocab-pinyin">shū</span>
+                <span class="vocab-meaning">Buku</span>
+            </div>
+            <div class="vocab-item">
+                <span class="vocab-num">2</span>
+                <span class="vocab-hanzi">笔</span>
+                <span class="vocab-pinyin">bǐ</span>
+                <span class="vocab-meaning">Alat untuk menulis</span>
+            </div>
+            <div class="vocab-item">
+                <span class="vocab-num">3</span>
+                <span class="vocab-hanzi">书包</span>
+                <span class="vocab-pinyin">shū bāo</span>
+                <span class="vocab-meaning">Tas sekolah</span>
+            </div>
+            <div class="vocab-item">
+                <span class="vocab-num">4</span>
+                <span class="vocab-hanzi">同桌</span>
+                <span class="vocab-pinyin">tónɡ zhuō</span>
+                <span class="vocab-meaning">Teman semeja</span>
+            </div>
+            <div class="vocab-item">
+                <span class="vocab-num">5</span>
+                <span class="vocab-hanzi">谁</span>
+                <span class="vocab-pinyin">shéi</span>
+                <span class="vocab-meaning">Siapa</span>
+            </div>
+            <div class="vocab-item">
+                <span class="vocab-num">6</span>
+                <span class="vocab-hanzi">两</span>
+                <span class="vocab-pinyin">liǎnɡ</span>
+                <span class="vocab-meaning">2 (Dua)</span>
+            </div>
+            <div class="vocab-item">
+                <span class="vocab-num">7</span>
+                <span class="vocab-hanzi">几</span>
+                <span class="vocab-pinyin">jǐ</span>
+                <span class="vocab-meaning">Berapa</span>
+            </div>
+            <div class="vocab-item">
+                <span class="vocab-num">8</span>
+                <span class="vocab-hanzi">阿姨</span>
+                <span class="vocab-pinyin">ā yí</span>
+                <span class="vocab-meaning">Bibi</span>
+            </div>
+            <div class="vocab-item">
+                <span class="vocab-num">9</span>
+                <span class="vocab-hanzi">叔叔</span>
+                <span class="vocab-pinyin">shū shu</span>
+                <span class="vocab-meaning">Paman</span>
+            </div>
+            <div class="vocab-item">
+                <span class="vocab-num">10</span>
+                <span class="vocab-hanzi">可以</span>
+                <span class="vocab-pinyin">kě yǐ</span>
+                <span class="vocab-meaning">Boleh</span>
+            </div>
+            <div class="vocab-item">
+                <span class="vocab-num">11</span>
+                <span class="vocab-hanzi">学校</span>
+                <span class="vocab-pinyin">xué xiào</span>
+                <span class="vocab-meaning">Sekolah</span>
+            </div>
+            <div class="vocab-item">
+                <span class="vocab-num">12</span>
+                <span class="vocab-hanzi">食堂</span>
+                <span class="vocab-pinyin">shí tánɡ</span>
+                <span class="vocab-meaning">Kantin</span>
+            </div>
+            <div class="vocab-item">
+                <span class="vocab-num">13</span>
+                <span class="vocab-hanzi">电脑</span>
+                <span class="vocab-pinyin">diàn nǎo</span>
+                <span class="vocab-meaning">Komputer</span>
+            </div>
+            <div class="vocab-item">
+                <span class="vocab-num">14</span>
+                <span class="vocab-hanzi">没有</span>
+                <span class="vocab-pinyin">méi yǒu</span>
+                <span class="vocab-meaning">Tidak punya</span>
+            </div>
+            <div class="vocab-item">
+                <span class="vocab-num">15</span>
+                <span class="vocab-hanzi">有没有</span>
+                <span class="vocab-pinyin">yǒu méi yǒu</span>
+                <span class="vocab-meaning">Punya atau tidak</span>
+            </div>
+            <div class="vocab-item">
+                <span class="vocab-num">16</span>
+                <span class="vocab-hanzi">上面</span>
+                <span class="vocab-pinyin">shànɡ miàn</span>
+                <span class="vocab-meaning">Di atas</span>
+            </div>
+            <div class="vocab-item">
+                <span class="vocab-num">17</span>
+                <span class="vocab-hanzi">下面</span>
+                <span class="vocab-pinyin">xià miàn</span>
+                <span class="vocab-meaning">Di bawah</span>
+            </div>
+            <div class="vocab-item">
+                <span class="vocab-num">18</span>
+                <span class="vocab-hanzi">左边</span>
+                <span class="vocab-pinyin">zuǒ biān</span>
+                <span class="vocab-meaning">Sebelah kiri</span>
+            </div>
+            <div class="vocab-item">
+                <span class="vocab-num">19</span>
+                <span class="vocab-hanzi">右边</span>
+                <span class="vocab-pinyin">yòu biān</span>
+                <span class="vocab-meaning">Sebelah kanan</span>
+            </div>
+            <div class="vocab-item">
+                <span class="vocab-num">20</span>
+                <span class="vocab-hanzi">在</span>
+                <span class="vocab-pinyin">zài</span>
+                <span class="vocab-meaning">Di</span>
+            </div>
+            <div class="vocab-item">
+                <span class="vocab-num">21</span>
+                <span class="vocab-hanzi">房间</span>
                 <span class="vocab-pinyin">fánɡ jiān</span>
                 <span class="vocab-meaning">Kamar</span>
             </div>
             <div class="vocab-item">
-                <span class="vocab-num">2</span>
-				<span class="vocab-hanzi">这儿</span>
+                <span class="vocab-num">22</span>
+                <span class="vocab-hanzi">这儿</span>
                 <span class="vocab-pinyin">zhèr</span>
                 <span class="vocab-meaning">Di sini</span>
             </div>
             <div class="vocab-item">
-                <span class="vocab-num">3</span>
-                <span class="vocab-hanzi">床</span>
-                <span class="vocab-pinyin">chuánɡ</span>
-                <span class="vocab-meaning">Ranjang</span>
+                <span class="vocab-num">23</span>
+                <span class="vocab-hanzi">书架</span>
+                <span class="vocab-pinyin">shū jià</span>
+                <span class="vocab-meaning">Rak buku</span>
             </div>
             <div class="vocab-item">
-                <span class="vocab-num">4</span>
+                <span class="vocab-num">24</span>
                 <span class="vocab-hanzi">衣柜</span>
                 <span class="vocab-pinyin">yī ɡuì</span>
                 <span class="vocab-meaning">Lemari pakaian</span>
             </div>
             <div class="vocab-item">
-                <span class="vocab-num">5</span>
-                <span class="vocab-hanzi">圆桌</span>
-                <span class="vocab-pinyin">yuán zhuō</span>
-                <span class="vocab-meaning">Meja bundar</span>
-            </div>
-            <div class="vocab-item">
-                <span class="vocab-num">6</span>
-                <span class="vocab-hanzi">手</span>
-                <span class="vocab-pinyin">shǒu</span>
-                <span class="vocab-meaning">Tangan</span>
-            </div>
-            <div class="vocab-item">
-                <span class="vocab-num">7</span>
-                <span class="vocab-hanzi">嘴</span>
-                <span class="vocab-pinyin">zuǐ</span>
-                <span class="vocab-meaning">Mulut</span>
-            </div>
-            <div class="vocab-item">
-                <span class="vocab-num">8</span>
-                <span class="vocab-hanzi">鼻子</span>
-                <span class="vocab-pinyin">bí zi</span>
-                <span class="vocab-meaning">Hidung</span>
-            </div>
-            <div class="vocab-item">
-                <span class="vocab-num">9</span>
-                <span class="vocab-hanzi">眼睛</span>
-                <span class="vocab-pinyin">yǎn jinɡ</span>
-                <span class="vocab-meaning">Mata</span>
-            </div>
-			<div class="vocab-item">
-                <span class="vocab-num">10</span>
-                <span class="vocab-hanzi">耳朵</span>
-                <span class="vocab-pinyin">ěr duo</span>
-                <span class="vocab-meaning">Telinga</span>
+                <span class="vocab-num">25</span>
+                <span class="vocab-hanzi">家</span>
+                <span class="vocab-pinyin">jiā</span>
+                <span class="vocab-meaning">Rumah</span>
             </div>
         </div>
     </div>
@@ -360,11 +455,21 @@
             <div class="sentence-card">
                 <h4></h4>
                 <ul class="sentence-list">
-                    <li>wǒ de diàn nǎo zài zhuō zi shànɡ biān<br>我 的 电 脑 在 桌 子 上 边 。<br>Komputer saya di atas meja.</li>
-                    <li>zú qiú zài yuán zhuō xià miàn<br>足 球 在 圆 桌 下 面 。<br>Bola sepak di bawah meja bundar.</li>
-                    <li>mā ma de yòu biān shì wǒ jiě jie<br>妈 妈 的 右 边 是 我 姐 姐 。<br>Di sebelah kanan ibu adalah kakak perempuan saya.</li>
+                    <li>zhè shì wǒ de shū<br>这 是 我 的 书 。<br>Ini adalah buku saya.</li>  
+					<li>zhè shì xiǎo qiánɡ de bǐ<br>这 是 小 强 的 笔 。<br>Ini adalah pensil Xiao Qiang.</li>
+					<li>wǒ yǒu liǎnɡ běn shū<br>我 有 两 本 书 。<br>Saya memiliki dua buah buku.</li>
+					<li>wǒ yǒu yí ɡè shū bāo<br>我 有 一 个 书 包 。<br>Saya memiliki sebuah tas sekolah.</li>      
+					<li>nǐ jiā yǒu diàn nǎo ma<br>你 家 有 电 脑 吗 ？<br>Apakah di rumahmu ada komputer?</li>
+					<li>wǒ méi yǒu zì diǎn<br>我 没 有 字 典 。<br>Saya tidak memiliki kamus.</li>
+					<li>shū zài shū jià shànɡ<br>书 在 书 架 上 。<br>Buku di (atas) rak buku.</li>
+					<li>wǒ men xué xiào yǒu tú shū ɡuǎn<br>我 们 学 校 有 图 书 馆 。<br>Di sekolah kami ada perpustakaan.)</li>
+					<li>zhè shì wǒ de fánɡ jiān<br>这 是 我 的 房 间 。<br>Ini adalah kamar saya.</li>
+					<li>zhè er yǒu yì zhānɡ chuánɡ<br>这 儿 有 一 张 床 。<br>Di sini ada sebuah ranjang.</li>
+					<li>zhè shì wǒ de shū bāo<br>这 是 我 的 书 包 。<br>Ini adalah tas sekolah saya.</li>
+                    <li>wǒ yǒu liǎnɡ běn shū<br>我 有 两 本 书 。<br>Saya mempunyai 2 buah buku.</li>
+                    <li>wǒ jiā yǒu liǎnɡ tái diàn nǎo<br>我 家 有 两 台 电 脑 。<br>Di rumah saya ada 2 unit komputer.</li>
+                    <li>mèi mei zài mā ma de yòu biān<br>妹 妹 在 妈 妈 的 右 边 。<br>Adik perempuan berada di sebelah kanan ibu.</li>
                     <li>zhè shì wǒ de fánɡ jiān<br>这 是 我 的 房 间 。<br>Ini adalah kamar saya.</li>
-                    <li>zhè er yǒu yī ɡuì<br>这 儿 有 衣 柜 。<br>Di sini ada lemari pakaian.</li>
                 </ul>
             </div>
         </div>
@@ -378,54 +483,54 @@
         <p style="margin-bottom: 16px; color: var(--text-sub);"></p>
         <div class="stroke-grid">
             <div class="stroke-item">
-                <div class="stroke-pinyin"><span class="stroke-highlight">fánɡ</span></div>
-				<div class="stroke-char">房</div>
+                <div class="stroke-pinyin"><span class="stroke-highlight">shū</span></div>
+                <div class="stroke-char">书</div>
             </div>
             <div class="stroke-item">
-                <div class="stroke-pinyin"><span class="stroke-highlight">jiān</span></div>
-				<div class="stroke-char">间</div>
+                <div class="stroke-pinyin"><span class="stroke-highlight">bǐ</span></div>
+                <div class="stroke-char">笔</div>
             </div>
             <div class="stroke-item">
-                <div class="stroke-pinyin"><span class="stroke-highlight">zhè</span></div>
-				<div class="stroke-char">这</div>
+                <div class="stroke-pinyin"><span class="stroke-highlight">liǎnɡ</span></div>
+                <div class="stroke-char">两</div>
             </div>
             <div class="stroke-item">
-                <div class="stroke-pinyin"><span class="stroke-highlight">ér</span></div>
-				<div class="stroke-char">儿</div>
+                <div class="stroke-pinyin"><span class="stroke-highlight">shū bāo</span></div>
+                <div class="stroke-char">书包</div>
             </div>
             <div class="stroke-item">
-                <div class="stroke-pinyin"><span class="stroke-highlight">yī</span></div>
-				<div class="stroke-char">衣</div>
+                <div class="stroke-pinyin"><span class="stroke-highlight">diàn nǎo</span></div>
+                <div class="stroke-char">电脑</div>
             </div>
-			<div class="stroke-item">
-                <div class="stroke-pinyin"><span class="stroke-highlight">ɡuì</span></div>
-				<div class="stroke-char">柜</div>
+            <div class="stroke-item">
+                <div class="stroke-pinyin"><span class="stroke-highlight">méi yǒu</span></div>
+                <div class="stroke-char">没有</div>
             </div>
-			<div class="stroke-item">  
-                <div class="stroke-pinyin"><span class="stroke-highlight">yuán</span></div>
-				<div class="stroke-char">圆</div>
+            <div class="stroke-item">
+                <div class="stroke-pinyin"><span class="stroke-highlight">shū jià</span></div>
+                <div class="stroke-char">书架</div>
             </div>
-			<div class="stroke-item">
-                <div class="stroke-pinyin"><span class="stroke-highlight">zhuō</span></div>
-				<div class="stroke-char">桌</div>
+            <div class="stroke-item">
+                <div class="stroke-pinyin"><span class="stroke-highlight">xué xiào</span></div>
+                <div class="stroke-char">学校</div>
             </div>
-			<div class="stroke-item">
-                <div class="stroke-pinyin"><span class="stroke-highlight">ěr</span></div>
-				<div class="stroke-char">耳</div>
+            <div class="stroke-item">
+                <div class="stroke-pinyin"><span class="stroke-highlight">fánɡ jiān</span></div>
+                <div class="stroke-char">房间</div>
             </div>
-			<div class="stroke-item">
-                <div class="stroke-pinyin"><span class="stroke-highlight">duǒ</span></div>
-				<div class="stroke-char">朵</div>
+            <div class="stroke-item">
+                <div class="stroke-pinyin"><span class="stroke-highlight">zhè er</span></div>
+                <div class="stroke-char">这儿</div>
             </div>
         </div>
     </div>
-	
-	<div class="button-box">
-		<a href="https://sujianduo.github.io/Kelas-4/" class="btn" target="_blank">
-		开始做练习题<br>Mulai mengerjakan soal latihan
-		</a>
-	</div>
-	<div class="footer">⭐ SD WIDYA DHARMA BANJARMASIN ⭐</div>
+
+    <div class="button-box">
+        <a href="https://sujianduo.github.io/Kelas-4/" class="btn" target="_blank">
+            开始做练习题<br>Mulai mengerjakan soal latihan
+        </a>
+    </div>
+    <div class="footer">⭐ SD WIDYA DHARMA BANJARMASIN ⭐</div>
 
 </div>
 
